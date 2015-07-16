@@ -1,10 +1,18 @@
 source 'https://rubygems.org'
 
-gem 'bundler'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
+gem 'xpath'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :development, :test do
+  gem 'sqlite3'
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'selenium-webdriver'
+  gem 'capybara'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
